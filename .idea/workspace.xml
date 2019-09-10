@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c94dc801-21b5-416a-ac7a-ae36d809c160" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Session.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SessionTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/Account.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/Entry.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/Journal.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/test/JournalTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,10 +30,17 @@
   </component>
   <component name="ProjectId" id="1QcMnsTaWAxwHPNRyZrhhrvFI07" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
+    <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit 6+" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/phpunit-8.3.4.phar" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Michael Jaros\Desktop\jaromic.github.com\2019-09-unit-testing\model" />
+      <recent name="C:\Users\Michael Jaros\Desktop\jaromic.github.com\2019-09-unit-testing\Account.php" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -70,6 +81,7 @@
       <option name="presentableId" value="Default" />
       <updated>1568065600456</updated>
       <workItem from="1568065601535" duration="2449000" />
+      <workItem from="1568088335398" duration="4522000" />
     </task>
     <servers />
   </component>
@@ -81,7 +93,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
