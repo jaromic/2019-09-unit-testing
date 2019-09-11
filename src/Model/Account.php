@@ -1,6 +1,9 @@
 <?php
 
-namespace Accounting\model;
+
+namespace Accounting\Model;
+
+/* class is not yet in use */
 
 class Account
 {
