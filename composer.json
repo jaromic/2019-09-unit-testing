@@ -1,0 +1,19 @@
+{
+  "name": "Jarosoft/Accounting",
+  "description": "description_text",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Michael Jaros",
+      "email": "michael.jaros@jarosoft.at"
+    }
+  ],
+  "require": {
+    "phpunit/phpunit": "7.5.15",
+    "gabordemooij/redbean": "v5.3.1"
+  },
+  "autoload": {
+    "psr-4": {"Accounting\\": "src/"}
+  }
+}

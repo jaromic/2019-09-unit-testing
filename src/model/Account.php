@@ -1,7 +1,6 @@
 <?php
 
-
-namespace Accounting;
+namespace Accounting\model;
 
 class Account
 {
@@ -37,7 +36,7 @@ class Account
 
     public function calculateBalance(Journal $journal): float {
         $balance = 0.0;
-        foreach($journal->entries as $entry) {
+        foreach($journal->getEntries as $entry) {
             if($entry->getAccount() && $entry->getAccount()->getName()) {
                 $balance += $entry->getAmount();
             }

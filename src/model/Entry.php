@@ -1,6 +1,6 @@
 <?php
 
-namespace Accounting;
+namespace Accounting\model;
 
 class Entry
 {

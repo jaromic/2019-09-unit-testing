@@ -2,14 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c94dc801-21b5-416a-ac7a-ae36d809c160" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/model/Buchung.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/test/BuchungTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CLI/Accounting.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/test/JournalTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/2019-09-unit-testing.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/2019-09-unit-testing.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php-test-framework.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php-test-framework.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/.phpunit.result.cache" beforeDir="false" afterPath="$PROJECT_DIR$/lib/.phpunit.result.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Account.php" beforeDir="false" afterPath="$PROJECT_DIR$/model_mj/Account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Entry.php" beforeDir="false" afterPath="$PROJECT_DIR$/model_mj/Entry.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Journal.php" beforeDir="false" afterPath="$PROJECT_DIR$/model_mj/Journal.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/test/JournalTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/model_mj/test/JournalTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Session.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SessionTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/.phpunit.result.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/phpunit-8.3.4.phar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Buchung.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/test/BuchungTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_mj/Account.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_mj/Entry.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Entry.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_mj/Journal.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Journal.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_mj/test/JournalTest.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,16 +28,52 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
-      <executable />
+      <executable path="composer" />
     </execution>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.3">
     <include_path>
       <path value="$PROJECT_DIR$/lib" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/gabordemooij/redbean" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
     </include_path>
   </component>
   <component name="ProjectId" id="1QcMnsTaWAxwHPNRyZrhhrvFI07" />
@@ -35,11 +81,13 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit 6+" />
+    <property name="dumpAutoload C:/Users/Michael Jaros/Desktop/jaromic.github.com/2019-09-unit-testing/composer.json" value="--no-interaction --ansi --verbose" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/phpunit-8.3.4.phar" />
     <property name="settings.editor.selected.configurable" value="php.test.frameworks.configurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Michael Jaros\Desktop\jaromic.github.com\2019-09-unit-testing\src" />
       <recent name="C:\Users\Michael Jaros\Desktop\jaromic.github.com\2019-09-unit-testing\model" />
       <recent name="C:\Users\Michael Jaros\Desktop\jaromic.github.com\2019-09-unit-testing\Account.php" />
     </key>
@@ -56,24 +104,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHPUnit.BuchungTest">
-    <configuration name="BuchungTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="BuchungTest" file="$PROJECT_DIR$/model/test/BuchungTest.php" scope="Class" />
-      <method v="2" />
-    </configuration>
-    <configuration name="SessionTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="UnitTesting\SessionTest" file="$PROJECT_DIR$/SessionTest.php" scope="Class" />
-      <method v="2" />
-    </configuration>
-    <configuration name="SessionTest.testPut" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="UnitTesting\SessionTest" file="$PROJECT_DIR$/SessionTest.php" method="testPut" scope="Method" />
+  <component name="RunManager">
+    <configuration name="JournalTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Accounting\model\JournalTest" file="$PROJECT_DIR$/src/model/test/JournalTest.php" scope="Class" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.BuchungTest" />
-        <item itemvalue="PHPUnit.SessionTest.testPut" />
-        <item itemvalue="PHPUnit.SessionTest" />
+        <item itemvalue="PHPUnit.JournalTest" />
       </list>
     </recent_temporary>
   </component>
@@ -89,6 +127,7 @@
       <updated>1568065600456</updated>
       <workItem from="1568065601535" duration="2449000" />
       <workItem from="1568088335398" duration="9850000" />
+      <workItem from="1568202412456" duration="7276000" />
     </task>
     <task id="LOCAL-00001" summary="partial model">
       <created>1568099862585</created>
@@ -97,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568099862585</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="gemeinsame Änderungen von Di 10.9.19">
+      <created>1568202458931</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1568202458931</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,7 +164,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="partial model" />
-    <option name="LAST_COMMIT_MESSAGE" value="partial model" />
+    <MESSAGE value="gemeinsame Änderungen von Di 10.9.19" />
+    <option name="LAST_COMMIT_MESSAGE" value="gemeinsame Änderungen von Di 10.9.19" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/2019_09_unit_testing@SessionTest_testPut.xml" NAME="SessionTest.testPut Coverage Results" MODIFIED="1568068249525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
