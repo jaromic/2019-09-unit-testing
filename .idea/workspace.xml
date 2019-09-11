@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c94dc801-21b5-416a-ac7a-ae36d809c160" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/Account.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/Entry.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/Journal.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/test/JournalTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/Buchung.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/test/BuchungTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/.phpunit.result.cache" beforeDir="false" afterPath="$PROJECT_DIR$/lib/.phpunit.result.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Account.php" beforeDir="false" afterPath="$PROJECT_DIR$/model_mj/Account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Entry.php" beforeDir="false" afterPath="$PROJECT_DIR$/model_mj/Entry.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Journal.php" beforeDir="false" afterPath="$PROJECT_DIR$/model_mj/Journal.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/test/JournalTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/model_mj/test/JournalTest.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.3">
     <include_path>
       <path value="$PROJECT_DIR$/lib" />
     </include_path>
@@ -34,7 +36,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit 6+" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/phpunit-8.3.4.phar" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
+    <property name="settings.editor.selected.configurable" value="php.test.frameworks.configurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -54,7 +56,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHPUnit.SessionTest.testPut">
+  <component name="RunManager" selected="PHPUnit.BuchungTest">
+    <configuration name="BuchungTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="BuchungTest" file="$PROJECT_DIR$/model/test/BuchungTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
     <configuration name="SessionTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="UnitTesting\SessionTest" file="$PROJECT_DIR$/SessionTest.php" scope="Class" />
       <method v="2" />
@@ -65,6 +71,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.BuchungTest" />
         <item itemvalue="PHPUnit.SessionTest.testPut" />
         <item itemvalue="PHPUnit.SessionTest" />
       </list>
@@ -81,8 +88,16 @@
       <option name="presentableId" value="Default" />
       <updated>1568065600456</updated>
       <workItem from="1568065601535" duration="2449000" />
-      <workItem from="1568088335398" duration="4522000" />
+      <workItem from="1568088335398" duration="9850000" />
     </task>
+    <task id="LOCAL-00001" summary="partial model">
+      <created>1568099862585</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1568099862585</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,6 +115,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="partial model" />
+    <option name="LAST_COMMIT_MESSAGE" value="partial model" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/2019_09_unit_testing@SessionTest_testPut.xml" NAME="SessionTest.testPut Coverage Results" MODIFIED="1568068249525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
