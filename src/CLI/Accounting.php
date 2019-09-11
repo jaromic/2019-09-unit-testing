@@ -4,6 +4,7 @@ namespace Accounting\CLI;
 
 require_once "../../vendor/autoload.php";
 
+use Accounting\ExampleData\Creator;
 use Accounting\Exception\ArgumentCountException;
 use Accounting\Model\Entry;
 use Accounting\Model\Journal;
@@ -19,7 +20,6 @@ class Accounting
      */
     public static function main(array $argv): void
     {
-        self::initializeDatabase();
 
         $exitRequested = false;
         while (!$exitRequested) {
@@ -37,6 +37,9 @@ class Accounting
                         break;
                     case 'show':
                         self::showExistingEntry($args);
+                        break;
+                    case 'test':
+                        self::createTestData();
                         break;
                     case 'exit':
                         $exitRequested = true;
@@ -102,9 +105,11 @@ class Accounting
         }
     }
 
-    private static function initializeDatabase(): void
-    {
-        DB::initialize();
+    /**
+     *
+     */
+    private static function createTestData(): void {
+        Creator::run();
     }
 
 }

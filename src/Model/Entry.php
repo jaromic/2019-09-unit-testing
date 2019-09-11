@@ -4,10 +4,10 @@
 namespace Accounting\Model;
 
 
-use RedBeanPHP\R;
-
 class Entry
 {
+
+    private static $nextId = 0;
 
     /**
      * @var int;
@@ -34,77 +34,20 @@ class Entry
      */
     private $invoiceNumber;
 
-    private function __construct(int $id, float $amount, string $description, string $account, string $invoiceNumber)
+    public function __construct(float $amount, string $description, string $account, string $invoiceNumber)
     {
-        $this->id = $id;
+        $this->id =         $id = self::getNextId();
+
         $this->amount = $amount;
         $this->description = $description;
         $this->account = $account;
         $this->invoiceNumber = $invoiceNumber;
-
     }
 
-    /**
-     * @param float $amount
-     * @param string $description
-     * @param string $account
-     * @param string $invoiceNumber
-     * @return Entry
-     */
-    public static function create(float $amount, string $description, string $account, string $invoiceNumber): Entry
+    private static function getNextId(): int
     {
-        $entryRecord = R::dispense('entry');
-        $entryRecord->amount = $amount;
-        $entryRecord->description = $description;
-        $entryRecord->account = $account;
-        $entryRecord->invoiceNumber = $invoiceNumber;
-
-        $id = intval(R::store($entryRecord));
-
-        return new Entry($id, $amount, $description, $account, $invoiceNumber);
-
-    }
-
-    /**
-     * @return Entry[]
-     */
-    public static function getAll(): array
-    {
-        $result = [];
-        $resultRecords = R::find('entry');
-        foreach ($resultRecords as $resultRecord) {
-            array_push($result, self::instantiateFromRecord($resultRecord));
-        }
-        return $result;
-    }
-
-    /**
-     * @param int $id
-     * @return Entry|null
-     */
-    public static function getById(int $id): ?Entry
-    {
-        $entryRecord = R::load('entry', $id);
-        return self::instantiateFromRecord($entryRecord);
-    }
-
-    /**
-     * @param \RedBeanPHP\OODBBean $entryRecord
-     * @return Entry|null
-     */
-    private static function instantiateFromRecord(\RedBeanPHP\OODBBean $entryRecord)
-    {
-        if ($entryRecord->id != 0) {
-            $result = new Entry(
-                intval($entryRecord->id),
-                floatval($entryRecord->amount),
-                trim($entryRecord->description),
-                trim($entryRecord->account),
-                trim($entryRecord->invoiceNumber)
-            );
-        } else {
-            $result = null;
-        }
+        $result = self::$nextId;
+        self::$nextId += 1;
         return $result;
     }
 

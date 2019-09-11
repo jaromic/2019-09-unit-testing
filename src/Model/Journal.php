@@ -15,9 +15,9 @@ class Journal
     private static $instance;
 
     /**
-     * @var OODBBean[]
+     * @var Entry[]
      */
-    private $ownEntryList;
+    private $entries;
 
     public static function getInstance(): Journal
     {
@@ -27,17 +27,42 @@ class Journal
         return self::$instance;
     }
 
-
     /**
      * @return Entry[]
      */
     public function getEntries(): array
     {
-        return Entry::getAll();
+        return $this->entries;
     }
 
+    /**
+     * @param Entry $entry
+     */
+    public function addEntry(Entry $entry): void {
+        array_push($this->entries, $entry);
+    }
+
+    /**
+     * @param int $id
+     * @return Entry|null
+     */
+    public function getEntry(int $id): ?Entry {
+        $result = null;
+        foreach($this->entries as $entry) {
+            if($entry->getId()==$id) {
+                $result = $entry;
+                break;
+            }
+        }
+        return $result;
+    }
+
+    /**
+     * Journal constructor.
+     */
     private function __construct()
     {
+        $this->entries = [];
     }
 
     public function __toString()

@@ -5,6 +5,7 @@ namespace Accounting\Model;
 
 
 use Accounting\DB\DB;
+use Accounting\ExampleData\Creator;
 use PHPUnit\Framework\TestCase;
 use RedBeanPHP\R;
 
@@ -16,42 +17,23 @@ class JournalTest extends TestCase
 
     protected function setUp(): void
     {
-        if (!R::testConnection()) {
-            DB::initialize();
-        }
-        R::begin();
 
         $this->journal = Journal::getInstance();
         $this->account = 'Porto und Gebuehren';
+        Creator::run();
     }
 
     protected function tearDown(): void
     {
-        R::rollback();
-        R::close();
     }
 
     public function testAddEntry(): void
     {
         $journal = $this->journal;
-        $entry = Entry::create(20.0, 'Briefmarken', $this->account, '123');
+        $journal->addEntry(new Entry(20.0, 'Briefmarken', $this->account, '123'));
         $countBefore = count($journal->getEntries());
-        Entry::create(15.0, 'Kuverts', $this->account, '456');
+        $journal->addEntry(new Entry(15.0, 'Kuverts', $this->account, '456'));
         $this->assertCount($countBefore + 1, $journal->getEntries());
     }
 
-    public function testEntryIdStart(): void
-    {
-        $countBefore = count($this->journal->getEntries());
-        $entry = Entry::create(20.0, 'Briefmarken', $this->account, '123');
-        $this->assertEquals($countBefore+1, $entry->getId());
-    }
-
-    public function testEntryIdIncrement(): void
-    {
-        $countBefore = count($this->journal->getEntries());
-        $entry1 = Entry::create(20.0, 'Briefmarken', $this->account, '123');
-        $entry2 = Entry::create(20.0, 'Briefmarken', $this->account, '123');
-        $this->assertEquals($countBefore+2, $entry2->getId());
-    }
 }

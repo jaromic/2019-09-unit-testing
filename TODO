@@ -1,2 +1,10 @@
-TODO add tax to Entry
+TODO Projekt 2019-09-unit-testing: branch auschecken: tdd
+TODO install xdebug
+TODO configure php.ini for xdebug
+TODO run EntryTest with coverage
+TODO display coverage data
+TODO what is not tested in Entry, Journal? add more tests...
+TODO add tax, grossAmount to Entry
 TODO replace account string with account class
+TODO phpdoc
+TODO typehints
