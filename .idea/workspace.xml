@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c94dc801-21b5-416a-ac7a-ae36d809c160" name="Default Changelist" comment="Remove DB, prepare branch for unit testing exercises">
-      <change beforePath="$PROJECT_DIR$/.idea/2019-09-unit-testing.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/2019-09-unit-testing.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TODO" beforeDir="false" afterPath="$PROJECT_DIR$/TODO" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CLI/Accounting.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CLI/Act.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Account.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Entry.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entry.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/test/EntryTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/test/EntryTest.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +20,7 @@
     </execution>
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="70" />
+    <option name="myElementSize" value="152" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -100,7 +96,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHP Script.Act.php">
+  <component name="RunManager" selected="PHPUnit.EntryTest">
+    <configuration name="EntryTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Accounting\Model\EntryTest" file="$PROJECT_DIR$/src/Model/test/EntryTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
     <configuration name="JournalTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Accounting\model\JournalTest" file="$PROJECT_DIR$/src/Model/test/JournalTest.php" scope="Class" />
       <method v="2" />
@@ -110,6 +110,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.EntryTest" />
         <item itemvalue="PHP Script.Act.php" />
         <item itemvalue="PHPUnit.JournalTest" />
       </list>
@@ -130,6 +131,8 @@
       <workItem from="1568202412456" duration="7276000" />
       <workItem from="1568220686209" duration="14858000" />
       <workItem from="1568265965504" duration="3585000" />
+      <workItem from="1568280008492" duration="4089000" />
+      <workItem from="1568286140157" duration="7423000" />
     </task>
     <task id="LOCAL-00001" summary="partial model">
       <created>1568099862585</created>
@@ -179,6 +182,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="Remove DB, prepare branch for unit testing exercises" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/2019_09_unit_testing@EntryTest.xml" NAME="EntryTest Coverage Results" MODIFIED="1568292420985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/2019_09_unit_testing@SessionTest_testPut.xml" NAME="SessionTest.testPut Coverage Results" MODIFIED="1568068249525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/2019_09_unit_testing@JournalTest.xml" NAME="JournalTest Coverage Results" MODIFIED="1568242579904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/2019_09_unit_testing@SessionTest.xml" NAME="SessionTest Coverage Results" MODIFIED="1568067652145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

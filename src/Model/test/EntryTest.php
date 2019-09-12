@@ -7,20 +7,52 @@ use PHPUnit\Framework\TestCase;
 class EntryTest extends TestCase
 {
 
+    private $journal;
+
+    public function setUp() {
+        echo __METHOD__."\n";
+        $this->journal = Journal::getInstance();
+    }
+
+    public static function setUpBeforeClass() {
+        echo __METHOD__."\n";
+    }
+
     public function testEntryIdStart(): void
     {
         $journal = $this->journal;
-        $entry = new Entry(20.0, 'Briefmarken', $this->account, '123');
+        $entry = $this->getSingleTestEntry();
         $journal->addEntry($entry);
-        $this->assertEquals(count($journal->getEntries())+1, $entry->getId());
+        $this->assertEquals(0, $entry->getId());
     }
 
     public function testEntryIdIncrement(): void
     {
-        $journal = $this->journal;
-        $countBefore = count($this->journal->getEntries());
-        $entry1 = new Entry(20.0, 'Briefmarken', $this->account, '123');
-        $entry2 = new Entry(20.0, 'Briefmarken', $this->account, '123');
-        $this->assertEquals($countBefore+2, $entry2->getId());
+        $entry = $this->getSingleTestEntry();
+        $this->assertEquals(1, $entry->getId());
+    }
+
+    public function testIsIncomeOrExpense(): void {
+        $entry = $this->getSingleTestEntry();
+        $this->assertTrue($entry->isIncome() || $entry->isExpense());
+    }
+
+    public function testGetAmount(): void {
+        $entry = $this->getSingleTestEntry();
+        $this->assertEquals(20.0, $entry->getAmount());
+    }
+
+    /**
+     * @return Entry
+     */
+    private function getSingleTestEntry(): Entry
+    {
+        $entry = new Entry(20.0,
+            'Briefmarken',
+            '7800',
+            '123',
+            false
+        );
+        return $entry;
     }
 }

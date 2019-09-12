@@ -28,19 +28,35 @@ class Entry
      */
     private $account;
 
-
     /**
      * @var string
      */
     private $invoiceNumber;
 
-    public function __construct(float $amount, string $description, string $account, string $invoiceNumber)
+    /**
+     * @var bool
+     */
+    private $isIncome;
+
+    /**
+     * Entry constructor.
+     * @param float $amount
+     * @param string $description
+     * @param string $account
+     * @param string $invoiceNumber
+     */
+    public function __construct(float $amount,
+                                string $description,
+                                string $account,
+                                string $invoiceNumber,
+                                bool $isIncome)
     {
         $this->id = self::getNextId();
         $this->amount = $amount;
         $this->description = $description;
         $this->account = $account;
         $this->invoiceNumber = $invoiceNumber;
+        $this->isIncome = $isIncome;
     }
 
     private static function getNextId(): int
@@ -97,6 +113,21 @@ class Entry
     {
         $output = "{$this->id}: {$this->amount} € for {$this->description} ({$this->invoiceNumber})";
         return $output;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isIncome(): bool
+    {
+        return $this->isIncome;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isExpense(): bool {
+        return ! $this->isIncome;
     }
 
 }
