@@ -1,10 +1,10 @@
-TODO Projekt 2019-09-unit-testing: branch auschecken: tdd
-TODO install xdebug
-TODO configure php.ini for xdebug
-TODO run EntryTest with coverage
-TODO display coverage data
-TODO what is not tested in Entry, Journal? add more tests...
+DONE Projekt 2019-09-unit-testing: branch auschecken: tdd
+DONE install xdebug
+DONE configure php.ini for xdebug
+DONE run EntryTest with coverage
+DONE display coverage data
+DONE what is not tested in Entry, Journal? add more tests...
 TODO add tax, grossAmount to Entry
 TODO replace account string with account class
-TODO WH: phpdoc
-TODO WH: typehints
+DONE WH: phpdoc
+DONE WH: typehints

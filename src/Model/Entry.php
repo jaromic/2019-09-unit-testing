@@ -17,7 +17,7 @@ class Entry
     /**
      * @var float
      */
-    private $amount;
+    private $grossAmount;
 
     /**
      * @var string
@@ -39,6 +39,11 @@ class Entry
     private $isIncome;
 
     /**
+     * @var int
+     */
+    private $tax;
+
+    /**
      * Entry constructor.
      * @param float $amount
      * @param string $description
@@ -49,16 +54,21 @@ class Entry
                                 string $description,
                                 string $account,
                                 string $invoiceNumber,
-                                bool $isIncome)
+                                bool $isIncome,
+                                int $tax)
     {
         $this->id = self::getNextId();
-        $this->amount = $amount;
+        $this->grossAmount = $amount;
         $this->description = $description;
         $this->account = $account;
         $this->invoiceNumber = $invoiceNumber;
         $this->isIncome = $isIncome;
+        $this->tax = $tax;
     }
 
+    /**
+     * @return int
+     */
     private static function getNextId(): int
     {
         $result = self::$nextId;
@@ -77,9 +87,17 @@ class Entry
     /**
      * @return float
      */
-    public function getAmount(): float
+    public function getGrossAmount(): float
     {
-        return $this->amount;
+        return $this->grossAmount;
+    }
+
+    /**
+     * @return float
+     */
+    public function getNetAmount(): float
+    {
+        return $this->grossAmount / (100 + $this->tax) * 100;
     }
 
     /**
@@ -111,7 +129,12 @@ class Entry
      */
     public function __toString()
     {
-        $output = "{$this->id}: {$this->amount} € for {$this->description} ({$this->invoiceNumber})";
+        if ($this->isIncome) {
+            $incomeOrExpense = 'Income';
+        } else {
+            $incomeOrExpense = 'Expense';
+        }
+        $output = "{$incomeOrExpense} {$this->id}: {$this->grossAmount} € for {$this->description} ({$this->invoiceNumber})";
         return $output;
     }
 
@@ -126,8 +149,17 @@ class Entry
     /**
      * @return bool
      */
-    public function isExpense(): bool {
-        return ! $this->isIncome;
+    public function isExpense(): bool
+    {
+        return !$this->isIncome;
+    }
+
+    /**
+     * @return int
+     */
+    public function getTax(): int
+    {
+        return $this->tax;
     }
 
 }
