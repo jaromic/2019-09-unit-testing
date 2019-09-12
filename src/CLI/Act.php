@@ -8,17 +8,15 @@ use Accounting\ExampleData\Creator;
 use Accounting\Exception\ArgumentCountException;
 use Accounting\Model\Entry;
 use Accounting\Model\Journal;
-use Accounting\DB\DB;
 use Exception;
-use RedBeanPHP\R;
 
-class Accounting
+class Act
 {
     /**
      * @param string[] $argv
      * @return int
      */
-    public static function main(array $argv): void
+    public static function main(): void
     {
 
         $exitRequested = false;
@@ -44,6 +42,9 @@ class Accounting
                     case 'exit':
                         $exitRequested = true;
                         break;
+                    case 'help':
+                        self::printHelp();
+                        break;
                     default:
                         echo "Command not found.\n";
                         break;
@@ -59,6 +60,10 @@ class Accounting
         echo Journal::getInstance() . "\n";
     }
 
+    /**
+     * @param array $args
+     * @throws ArgumentCountException
+     */
     private static function postNewEntry(array $args): void
     {
         $expectedArgumentCount = 4;
@@ -68,16 +73,21 @@ class Accounting
         $description = $args[1];
         $account = $args[2];
         $invoiceNumber = $args[3];
-        $newEntry = Entry::create($amount, $description, $account, $invoiceNumber);
+        $newEntry = new Entry ($amount, $description, $account, $invoiceNumber);
+        Journal::getInstance()->addEntry($newEntry);
     }
 
+    /**
+     * @param array $args
+     * @throws ArgumentCountException
+     */
     private static function showExistingEntry(array $args): void
     {
         $expectedArgumentCount = 1;
         $usage = "show <id>";
         self::checkArgumentCount($args, $expectedArgumentCount, $usage);
         $id = intval($args[0]);
-        $entry = Entry::getById($id);
+        $entry = Journal::getInstance()->getEntry($id);
         echo "{$entry}\n";
     }
 
@@ -108,10 +118,30 @@ class Accounting
     /**
      *
      */
-    private static function createTestData(): void {
+    private static function createTestData(): void
+    {
         Creator::run();
+    }
+
+    /**
+     *
+     */
+    private static  function printHelp(): void
+    {
+        echo <<<END
+Available Commands:
+    journal  Print the journal with all entries
+    show     Display existing entry
+    post     Create a new entry
+    merge    Merge two entries into one
+    split    Split an entry into two
+    report   Print a comprehensive report
+    help     Show this help message
+    test     Generate test data
+    exit     Exit the program
+END;
     }
 
 }
 
-Accounting::main($argv);
+Act::main();

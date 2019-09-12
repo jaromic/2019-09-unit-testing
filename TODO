@@ -6,5 +6,5 @@ TODO display coverage data
 TODO what is not tested in Entry, Journal? add more tests...
 TODO add tax, grossAmount to Entry
 TODO replace account string with account class
-TODO phpdoc
-TODO typehints
+TODO WH: phpdoc
+TODO WH: typehints

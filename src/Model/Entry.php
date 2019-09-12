@@ -36,8 +36,7 @@ class Entry
 
     public function __construct(float $amount, string $description, string $account, string $invoiceNumber)
     {
-        $this->id =         $id = self::getNextId();
-
+        $this->id = self::getNextId();
         $this->amount = $amount;
         $this->description = $description;
         $this->account = $account;

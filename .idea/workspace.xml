@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c94dc801-21b5-416a-ac7a-ae36d809c160" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/nfo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ExampleData/Creator.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/test/EntryTest.php" afterDir="false" />
+    <list default="true" id="c94dc801-21b5-416a-ac7a-ae36d809c160" name="Default Changelist" comment="Remove DB, prepare branch for unit testing exercises">
       <change beforePath="$PROJECT_DIR$/.idea/2019-09-unit-testing.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/2019-09-unit-testing.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TODO" beforeDir="false" afterPath="$PROJECT_DIR$/TODO" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CLI/Accounting.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CLI/Accounting.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DB/DB.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CLI/Accounting.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CLI/Act.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Account.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Entry.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entry.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Journal.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Journal.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/test/JournalTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/test/JournalTest.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +17,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="DONT_SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable path="composer" />
@@ -40,7 +35,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWebServerValidation" path_to_validation_script="C:\Users\micha\Desktop\github.jaromic\2019-09-unit-testing" selected_validation_type="LOCAL" web_path_to_validation_script="https://dev.github-jaromic:8008/2019-09-unit-testing" />
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.3">
     <include_path>
       <path value="$PROJECT_DIR$/lib" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
@@ -72,6 +67,7 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
       <path value="$PROJECT_DIR$/vendor/sebastian/version" />
       <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/gabordemooij/redbean" />
     </include_path>
   </component>
   <component name="ProjectId" id="1QcMnsTaWAxwHPNRyZrhhrvFI07" />
@@ -104,18 +100,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHPUnit.JournalTest">
+  <component name="RunManager" selected="PHP Script.Act.php">
     <configuration name="JournalTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Accounting\model\JournalTest" file="$PROJECT_DIR$/src/Model/test/JournalTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="Accounting.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/CLI/Accounting.php">
+    <configuration name="Act.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/CLI/Act.php">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHP Script.Act.php" />
         <item itemvalue="PHPUnit.JournalTest" />
-        <item itemvalue="PHP Script.Accounting.php" />
       </list>
     </recent_temporary>
   </component>
@@ -133,6 +129,7 @@
       <workItem from="1568088335398" duration="9850000" />
       <workItem from="1568202412456" duration="7276000" />
       <workItem from="1568220686209" duration="14858000" />
+      <workItem from="1568265965504" duration="3585000" />
     </task>
     <task id="LOCAL-00001" summary="partial model">
       <created>1568099862585</created>
@@ -178,11 +175,12 @@
     <MESSAGE value="partial model" />
     <MESSAGE value="gemeinsame Änderungen von Di 10.9.19" />
     <MESSAGE value="Before removing DB stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Before removing DB stuff" />
+    <MESSAGE value="Remove DB, prepare branch for unit testing exercises" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove DB, prepare branch for unit testing exercises" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/2019_09_unit_testing@JournalTest.xml" NAME="JournalTest Coverage Results" MODIFIED="1568242579904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/2019_09_unit_testing@SessionTest_testPut.xml" NAME="SessionTest.testPut Coverage Results" MODIFIED="1568068249525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/2019_09_unit_testing@JournalTest.xml" NAME="JournalTest Coverage Results" MODIFIED="1568242579904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/2019_09_unit_testing@SessionTest.xml" NAME="SessionTest Coverage Results" MODIFIED="1568067652145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
